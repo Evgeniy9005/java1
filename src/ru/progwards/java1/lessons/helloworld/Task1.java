@@ -17,6 +17,7 @@ public class Task1 {
         System.out.print(str2);
         System.out.print(str3);
         System.out.print(str1);
+
     }
 
 }

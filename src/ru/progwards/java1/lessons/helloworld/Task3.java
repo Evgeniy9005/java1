@@ -36,5 +36,6 @@ public class Task3 {
         c=multiplication(a,b);
         System.out.print("a*b=");
         System.out.println(c);
+
     }
 }

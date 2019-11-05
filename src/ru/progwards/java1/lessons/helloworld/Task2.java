@@ -11,6 +11,7 @@ public class Task2 {
         System.out.print("Результат z= ");
         System.out.print(z);
     }
+
     public static void main(String[] args){
         subtraction(89,55);
     }
