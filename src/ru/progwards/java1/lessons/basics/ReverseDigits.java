@@ -22,7 +22,7 @@ public class ReverseDigits {
     }
 
     public static void main(String[] args) {
-        System.out.println(reverseDigits(681));
+        System.out.println("Вывод чисел 681 в обратном проядке, равно "+reverseDigits(681));
 
     }
 }
