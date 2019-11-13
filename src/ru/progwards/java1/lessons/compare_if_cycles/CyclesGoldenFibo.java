@@ -1,9 +1,10 @@
 package ru.progwards.java1.lessons.compare_if_cycles;
 
 public class CyclesGoldenFibo {
-//Возвращает true, если десятичное представление числа number содердит цифру digit
+    //Возвращает true, если десятичное представление числа number содердит цифру digit
     public static boolean containsDigit(int number, int digit){
-        return true;
+        boolean result=false;
+        return result;
     }
     // Возвращает n-ое число Фибоначчи (нумерация начинается с 1, то есть при n = 3
     // должно вернуться число Фибоначчи 2, а при n = 10 число 55).
@@ -40,6 +41,8 @@ public class CyclesGoldenFibo {
     }
 
     public static void main(String[] args) {
+        //Возвращает true, если десятичное представление числа number содердит цифру digit
+        System.out.println(containsDigit(234,4));
         // Выводит на экран числа Фибоначи от 1 до 15
         for (int i=0;i<=15;i++ )System.out.println(fiboNumber(i));
         // Выводит на экран значение сторон Золотых треугольников в диапазоне натуральных чисел от 1 до 100
