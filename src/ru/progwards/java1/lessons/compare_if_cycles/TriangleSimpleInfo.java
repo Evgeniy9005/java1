@@ -1,7 +1,7 @@
 package ru.progwards.java1.lessons.compare_if_cycles;
 
 public class TriangleSimpleInfo {
-    //Возврашает наибольшое число
+    //Возврашает наибольшее число
     public static int maxSide(int a, int b, int c){
         int result=0;
         if (a>b) result =a;// выясняет а больше b, если да то присваевает переменной result большее
@@ -26,9 +26,10 @@ public class TriangleSimpleInfo {
         if (a==b && a==c && b==c) result =true;// Сравнивает а равно б и а равно с и b равно с
         return result; // Возврашает результат
     }
+
     public static void main(String[] args) {
         System.out.println("Наибольшая длина стороны треугольника "+maxSide(2,4,1));
-        // Выводит на экран наибольшое число из трех чисел
+        // Выводит на экран наибольшее число из трех чисел
         System.out.println("Наименьшая длина стороны треугольника "+minSide(3,3,3));
         // Выводит на экран наименьшее число из трех чисел
         System.out.println("Равностороний? "+isEquilateralTriangle(3,3,3));

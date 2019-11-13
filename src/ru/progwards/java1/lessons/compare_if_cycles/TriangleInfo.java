@@ -19,6 +19,7 @@ public class TriangleInfo {
         if (a==b || a==c ||b==c ) result=true;
         return result;
     }
+
     public static void main(String[] args) {
         System.out.println("Можно построить Треугольник? " + isTriangle(3,2,2));
         System.out.println("Треугольник прямоугольный? " + isRightTriangle(4,3,5));
