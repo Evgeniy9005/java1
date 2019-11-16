@@ -3,7 +3,11 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 public class CyclesGoldenFibo {
     //Возвращает true, если десятичное представление числа number содердит цифру digit
     public static boolean containsDigit(int number, int digit){
+        long l;
         boolean result=false;
+        l =number%10;
+        number=number/10;
+        System.out.println("Остаток от деления "+l+" и диление "+ number);
         return result;
     }
     // Возвращает n-ое число Фибоначчи (нумерация начинается с 1, то есть при n = 3
@@ -41,6 +45,7 @@ public class CyclesGoldenFibo {
     }
 
     public static void main(String[] args) {
+
         //Возвращает true, если десятичное представление числа number содердит цифру digit
         System.out.println(containsDigit(234,4));
         // Выводит на экран числа Фибоначи от 1 до 15
@@ -49,5 +54,7 @@ public class CyclesGoldenFibo {
         for (int i1=0;i1<=100;i1++) {for (int i=0;i<=100;i++)
             if (isGoldenTriangle(i,i1,i) == true)
                 System.out.println("Золотой треугольник a="+i+" b="+i1+" c="+i);}
+        System.out.println(containsDigit(234789,6));
     }
+
 }
