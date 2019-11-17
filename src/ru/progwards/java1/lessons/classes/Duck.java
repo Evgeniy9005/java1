@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.classes;
 public class Duck extends Animal {
 
     Duck(){
-    super(2);
+    super(2d);
     }
     // Возвращает вид птицы "Утка"
     @Override

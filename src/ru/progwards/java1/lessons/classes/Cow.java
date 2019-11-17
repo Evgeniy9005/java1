@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.classes;
 public class Cow extends Animal {
 
     Cow (){
-        super(300);
+        super(300d);
     }
     // Возвращает вид животного "Корова"
     @Override

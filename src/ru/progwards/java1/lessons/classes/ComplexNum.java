@@ -42,13 +42,13 @@ public class ComplexNum {
     public ComplexNum div(ComplexNum num1, ComplexNum num2){
         ComplexNum div=new ComplexNum(num1.a,num1.b);
         div.a=(num1.a*num2.a+num1.b*num2.b)/(num2.a*num2.a+num2.b*num2.b);
-        div.b=(num1.b*num2.a+num1.a*num2.b)/(num2.a*num2.a+num2.b*num2.b);
+        div.b=(num1.b*num2.a-num1.a*num2.b)/(num2.a*num2.a+num2.b*num2.b);
     return div;
     }
     public static void main(String[] args) {
         //Создание объектов
-        ComplexNum complexNum1=new ComplexNum(1,7);
-        ComplexNum complexNum2=new ComplexNum(2,5);
+        ComplexNum complexNum1=new ComplexNum(1000,1000);
+        ComplexNum complexNum2=new ComplexNum(100,100);
         //Вывод на экран комплексного числа
         System.out.println(complexNum1.toString());
         //Вывод суммы комплексных чисел

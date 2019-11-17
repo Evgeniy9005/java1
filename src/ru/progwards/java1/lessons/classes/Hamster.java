@@ -4,6 +4,7 @@ public class Hamster extends Animal {
 
     Hamster (){
         super(0.1);
+
     }
     // Возвращает вид животного "Хомяк"
     @Override
