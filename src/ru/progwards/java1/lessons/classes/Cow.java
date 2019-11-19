@@ -2,8 +2,9 @@ package ru.progwards.java1.lessons.classes;
 // Реализация класса корова
 public class Cow extends Animal {
 
-    Cow (){
+    public Cow (){
         super(300d);
+
     }
     // Возвращает вид животного "Корова"
     @Override

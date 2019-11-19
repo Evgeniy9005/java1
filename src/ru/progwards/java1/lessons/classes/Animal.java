@@ -11,7 +11,7 @@ public class Animal {
         HAY,
         CORN}
       double weight;
-    Animal(double weight) {
+    public Animal(double weight) {
     this.weight=weight; //Запоминает вес тела животного
     }
     //Возврашает вид животного
@@ -26,7 +26,7 @@ public class Animal {
     @Override
     public String toString(){
        //return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN;
-        return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN+" "+CalculateFoodWeight();
+        return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN+" "+сalculateFoodWeight();
     }
     // Возвращает вес животного
     public double getWeight(){
@@ -37,7 +37,7 @@ public class Animal {
         return 0.02;
     }
     // Возвращает необходимый вес еды к весу тела животного
-    public double CalculateFoodWeight(){
+    public double сalculateFoodWeight(){
         return weight*getFoodCoeff();
     }
 
@@ -47,7 +47,8 @@ public class Animal {
         System.out.println(animal.getFoodKind());
         System.out.println(animal.getWeight());
         System.out.println(animal.getFoodCoeff());
-        System.out.println(animal.toString());
+        System.out.println("Вес еды к весу тела животного "+animal.сalculateFoodWeight());
+
 
     }
 }
