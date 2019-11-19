@@ -21,10 +21,15 @@ public class Cow extends Animal {
     public double getFoodCoeff(){
         return 0.05;
     }
+    // Возвращает необходимый вес еды к весу тела животного
+    public double calculateFoodWeight(){
+        return weight*getFoodCoeff();
+    }
     public static void main(String[] args) {
         Cow cow=new Cow();
         System.out.println(cow.getKind());
         System.out.println(cow.getFoodKind());
         System.out.println(cow.getFoodCoeff());
+        System.out.println("Количество еды "+cow.calculateFoodWeight());
     }
 }

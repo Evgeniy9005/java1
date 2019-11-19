@@ -1,12 +1,12 @@
 package ru.progwards.java1.lessons.classes;
 
 public class Animal {
-     enum AnimalKind {
+     public enum AnimalKind {
         ANIMAL,
         COW,
         HAMSTER,
         DUCK}
-     enum FoodKind {
+    public enum FoodKind {
        UNKNOWN,
         HAY,
         CORN}
@@ -26,7 +26,7 @@ public class Animal {
     @Override
     public String toString(){
        //return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN;
-        return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN+" "+сalculateFoodWeight();
+        return "I am "+ AnimalKind.ANIMAL+ ", eat "+FoodKind.UNKNOWN+" "+calculateFoodWeight();
     }
     // Возвращает вес животного
     public double getWeight(){
@@ -37,7 +37,7 @@ public class Animal {
         return 0.02;
     }
     // Возвращает необходимый вес еды к весу тела животного
-    public double сalculateFoodWeight(){
+    public double calculateFoodWeight(){
         return weight*getFoodCoeff();
     }
 
@@ -47,7 +47,7 @@ public class Animal {
         System.out.println(animal.getFoodKind());
         System.out.println(animal.getWeight());
         System.out.println(animal.getFoodCoeff());
-        System.out.println("Вес еды к весу тела животного "+animal.сalculateFoodWeight());
+        System.out.println("Вес еды к весу тела животного "+animal.calculateFoodWeight());
 
 
     }

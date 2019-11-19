@@ -21,10 +21,15 @@ public class Hamster extends Animal {
     public double getFoodCoeff(){
         return 0.03;
     }
+    // Возвращает необходимый вес еды к весу тела животного
+    public double calculateFoodWeight(){
+        return weight*getFoodCoeff();
+    }
     public static void main(String[] args) {
         Hamster hamster=new Hamster();
         System.out.println(hamster.getKind());
         System.out.println(hamster.getFoodKind());
         System.out.println(hamster.getFoodCoeff());
+        System.out.println("Количество еды "+hamster.calculateFoodWeight());
     }
 }

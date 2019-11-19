@@ -20,10 +20,15 @@ public class Duck extends Animal {
     public double getFoodCoeff(){
         return 0.04;
     }
+    // Возвращает необходимый вес еды к весу тела животного
+    public double calculateFoodWeight(){
+        return weight*getFoodCoeff();
+    }
     public static void main(String[] args) {
         Duck duck=new Duck();
         System.out.println(duck.getKind());
         System.out.println(duck.getFoodKind());
         System.out.println(duck.getFoodCoeff());
+        System.out.println("Количество еды "+duck.calculateFoodWeight());
     }
 }
