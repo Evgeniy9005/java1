@@ -10,7 +10,7 @@ public class Point3D extends Point2D {
     public String toString(){
        super.toString();
         String xyz=Integer.toString(z);
-        xyz=super.toString()+", "+xyz;
+        xyz=super.toString()+","+xyz;
         return xyz;
     }
 

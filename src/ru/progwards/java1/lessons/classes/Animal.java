@@ -30,7 +30,7 @@ public class Animal {
     }
     // Возвращает вес животного
     public double getWeight(){
-        return 1d;
+        return weight;
     }
     // Возвращает коэффициент веса еды к весу тела животного
     public double getFoodCoeff(){
@@ -42,7 +42,7 @@ public class Animal {
     }
 
     public static void main(String[] args) {
-        Animal animal=new Animal(300d);
+        Animal animal=new Animal(492);
         System.out.println(animal.getKind());
         System.out.println(animal.getFoodKind());
         System.out.println(animal.getWeight());

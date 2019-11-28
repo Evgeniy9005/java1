@@ -1,4 +1,4 @@
-package Lip.progwards.ev;
+package Lesson_4;
 
 class Calculator{
     private int result;
@@ -15,14 +15,14 @@ class Calculator{
         return result-=num;
     }
     public int getResult(){
-        return 1;
+        return result;
     }
 
     public static void main(String[] args) {
         Calculator C=new Calculator();
-        System.out.println(C.set(12));
-        System.out.println(C.add(12));
-        System.out.println(C.sub(12));
-        System.out.println(C.sub(12));
+       System.out.println(C.set(1));
+       System.out.println(C.add(5));
+       System.out.println(C.sub(312));
+        System.out.println(C.getResult());
     }
 }

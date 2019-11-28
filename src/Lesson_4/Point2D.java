@@ -10,7 +10,7 @@ public class Point2D {
     @Override
     public String toString(){
         String xy=Integer.toString(x);
-        xy=xy+", "+Integer.toString(y);
+        xy=xy+","+Integer.toString(y);
         return xy;
     }
 

@@ -1,4 +1,4 @@
-package Lip.progwards.ev;
+package Lesson_4;
 
 public class Person {
     private String name;
