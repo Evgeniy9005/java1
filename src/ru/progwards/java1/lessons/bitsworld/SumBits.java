@@ -5,7 +5,7 @@ public class SumBits {
 
     //Выводит количества бит числа типа byte
 
-    public static int sumBits1(byte value){
+    public static int sumBits(byte value){
         int i;
         byte value1=-1;
         int result=0;
@@ -19,6 +19,6 @@ public class SumBits {
     }
     public static void main(String[] args) {
         //Вывод количества бит числа типа byte
-        System.out.println(sumBits1((byte)127));
+        System.out.println(sumBits((byte)127));
     }
 }
