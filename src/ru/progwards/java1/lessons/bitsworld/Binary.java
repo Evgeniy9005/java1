@@ -38,7 +38,6 @@ public class Binary {
 
         return s8+s7+s6+s5+s4+s3+s2+s1;
     }
-
     public static void main(String[] args) {
         Binary binary =new Binary((byte)-128);
         //Выводит на экран байт

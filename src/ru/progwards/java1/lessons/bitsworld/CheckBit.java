@@ -1,20 +1,21 @@
 package ru.progwards.java1.lessons.bitsworld;
 
 public class CheckBit {
+    // Возвращает порядковый номер бита в байте числа
     public static int checkBit(byte value, int bitNumber){
-        int b,i=-1,result=0;
-        int value1=value;
-        if (value<0) value1=~value1+1;// При отрицательном входном параметре
+        int i=-1,b;
+        byte value1=-1;
+        int result=0;
         do{
-            b=value1&1;
+           b=value&1;
             i++;
             if (i==bitNumber) result=b;
-            value1>>=1;
+            value>>=1;
+            value1<<=1;
         }while(value1!=0 );
         return result;
     }
-
     public static void main(String[] args) {
-        System.out.println(checkBit((byte)5,0));
+        System.out.println(checkBit((byte)-1,0));
     }
 }
