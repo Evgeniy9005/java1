@@ -12,7 +12,7 @@ private int[] arrayInt=new int[0];
     //и добавить в хвост элемент num.
     public void add(int num){
         arrayInt=Arrays.copyOf(arrayInt,arrayInt.length+1);
-        arrayInt[0]=num;
+        arrayInt[arrayInt.length-1]=num;
     }
     // добавляет элемент num в позицию pos массива, при этом размер массива увеличиться на 1.
     // размещает новый массив нужного размера, копирует в него старый,
@@ -34,17 +34,26 @@ private int[] arrayInt=new int[0];
         arrayInt=Arrays.copyOf(arrayInt,arrayInt.length-1);
     }
     public int at(int pos){
-        return arrayInt[pos-1];
+        return arrayInt[pos];
     }
 
     public static void main(String[] args) {
         DIntArray dIntArray=new DIntArray();
-        //for(int i=0;i!=5;i++) dIntArray.add(i);
-        dIntArray.atInsert(5,8);
+        //2,-82,83,46,-6,-53,-89,62
+        dIntArray.add(2);
+        dIntArray.add(-82);
+        dIntArray.add(83);
+        dIntArray.add(46);
+        dIntArray.add(-6);
+        dIntArray.add(-53);
+        dIntArray.add(-89);
+        dIntArray.add(62);
         System.out.println(Arrays.toString(dIntArray.arrayInt));
-        System.out.println(dIntArray.at(5));
-        dIntArray.atDelete(4);
-        System.out.println(Arrays.toString(dIntArray.arrayInt));
+        //dIntArray.atInsert(5,8);
+        //System.out.println(Arrays.toString(dIntArray.arrayInt));
 
+        dIntArray.atDelete(1);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+        System.out.println(dIntArray.at(1));
     }
 }
