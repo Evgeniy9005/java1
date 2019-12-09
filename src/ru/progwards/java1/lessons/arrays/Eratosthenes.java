@@ -36,17 +36,9 @@ public class Eratosthenes {
         System.out.println(Arrays.toString(sieve));
         return true;
     }
-    //Выводит на экран массив
-    @Override
-    public String toString(){
-        System.out.println(Arrays.toString(arrayInt));
-        return "";
-    }
-
     public static void main(String[] args) {
         Eratosthenes eratosthenes=new Eratosthenes(21);
         eratosthenes.sift();
-        eratosthenes.toString();
         eratosthenes.isSimple(21);
     }
 }
