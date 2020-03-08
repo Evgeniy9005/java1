@@ -23,7 +23,6 @@ public class CyclesGoldenFibo {
             if (fibo==0) fibo=1;
     }while (i!=n);
         return fibo;
-
     }
     // возвращать true, если треугольник со сторонами a, b, c является Золотым. Определим критерии.
     // Он должен быть равнобедренным и отношение ребра к основанию должно лежать между значениями 1.61703 и 1.61903.
@@ -42,6 +41,11 @@ public class CyclesGoldenFibo {
 
         }
         return result;
+    }
+    // Вложенный класс
+    public static class CacheInfo{
+        public int n; //- число, для которого рассчитываем Фибоначчи
+        public int fibo; //- результат расчета
     }
 
     public static void main(String[] args) {

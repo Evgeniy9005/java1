@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.classes;
 public class Hamster extends Animal {
 
     public Hamster (){
-        super(1d);
+        super(2d);
 
     }
     // Возвращает вид животного "Хомяк"

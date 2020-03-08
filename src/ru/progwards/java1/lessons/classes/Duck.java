@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.classes;
 public class Duck extends Animal {
 
     public Duck(){
-    super(2d);
+    super(3d);
     }
     // Возвращает вид птицы "Утка"
     @Override
@@ -30,5 +30,8 @@ public class Duck extends Animal {
         System.out.println(duck.getFoodKind());
         System.out.println(duck.getFoodCoeff());
         System.out.println("Количество еды "+duck.calculateFoodWeight());
+        duck.foodKind=FoodKind.CORN;
+        System.out.println(duck.getFood1kgPrice());
+        System.out.println(duck.getFoodPrice());
     }
 }
