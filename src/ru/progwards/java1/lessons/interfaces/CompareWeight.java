@@ -7,6 +7,7 @@ public interface CompareWeight {
         GREATER,
     }
     // Возвращает вес животного
-    public double getWeight();
+    double getWeight();
     CompareResult compareWeight(CompareWeight smthHasWeigt);
+
 }
