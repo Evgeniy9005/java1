@@ -1,5 +1,5 @@
 package ru.progwards.java1.lessons.interfaces;
-import ru.progwards.java1.lessons.bitsworld.Binary;
+
 
 public class Animal implements FoodCompare,CompareWeight {
 
@@ -88,7 +88,6 @@ public class Animal implements FoodCompare,CompareWeight {
         Cow cow = new Cow();// Объект карова
         Duck duck = new Duck();// Объект утка
         Hamster hamster = new Hamster();// Объект хомяк
-        Binary binary = new Binary((byte) -128);// Объект не являющийся экземпляром  класса Animal
 
         System.out.println(animal.getFoodKind());
         System.out.println(animal.getWeight());
@@ -103,7 +102,6 @@ public class Animal implements FoodCompare,CompareWeight {
         System.out.println("Карова и утка " + cow.equals(duck));
         System.out.println("Утка и хомяк " + duck.equals(hamster));
         System.out.println("Утка и утка " + duck.equals(duck));
-        System.out.println("Утка и что-то " + duck.equals(binary));
         System.out.println("Количество еды для утки " + duck.calculateFoodWeight() + " кг");
         System.out.println("Количество еды для коровы " + cow.calculateFoodWeight() + " кг");
         System.out.println(duck.compareWeight(cow));
