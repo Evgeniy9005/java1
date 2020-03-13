@@ -1,8 +1,8 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class Duck extends Animal {
-    public Duck(){
-        super(3);
+    public Duck(double weight){
+        super(weight);
     }
 
     // Возвращает вид корма "Кукуруза", птицы "Утка"
@@ -20,7 +20,7 @@ public class Duck extends Animal {
         return weight*getFoodCoeff();
     }
     public static void main(String[] args) {
-        Duck duck=new Duck();
+        Duck duck=new Duck(3);
         System.out.println(duck.getFoodKind());
         System.out.println(duck.getFoodCoeff());
         System.out.println("Количество еды "+duck.calculateFoodWeight());

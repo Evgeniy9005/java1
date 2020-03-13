@@ -1,8 +1,9 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class Cow extends Animal{
-    public Cow (){
-        super(270);
+
+    public Cow (double weight){
+        super(weight);
 
     }
 
@@ -21,7 +22,7 @@ public class Cow extends Animal{
         return weight*getFoodCoeff();
     }
     public static void main(String[] args) {
-        Cow cow=new Cow();
+        Cow cow=new Cow(300);
         System.out.println(cow.getFoodKind());
         System.out.println(cow.getFoodCoeff());
         System.out.println("Количество еды "+cow.calculateFoodWeight());

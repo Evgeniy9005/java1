@@ -9,10 +9,10 @@ public class Animal implements FoodCompare,CompareWeight {
         CORN
     }
 
-    int weight; // вес тела животного
+    double weight; // вес тела животного
     FoodKind foodKind = FoodKind.HAY;
 
-    public Animal(int weight) {
+    public Animal(double weight) {
         this.weight = weight; //Запоминает вес тела животного
     }
 
@@ -85,9 +85,9 @@ public class Animal implements FoodCompare,CompareWeight {
 
     public static void main(String[] args) {
         Animal animal = new Animal(492);
-        Cow cow = new Cow();// Объект карова
-        Duck duck = new Duck();// Объект утка
-        Hamster hamster = new Hamster();// Объект хомяк
+        Cow cow = new Cow(300);// Объект карова
+        Duck duck = new Duck(3);// Объект утка
+        Hamster hamster = new Hamster(0.2);// Объект хомяк
 
         System.out.println(animal.getFoodKind());
         System.out.println(animal.getWeight());

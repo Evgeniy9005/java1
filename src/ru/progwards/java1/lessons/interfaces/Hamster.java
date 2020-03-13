@@ -1,8 +1,8 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class Hamster extends Animal {
-    public Hamster (){
-        super(2);
+    public Hamster (double weight){
+        super(weight);
 
     }
     // Возвращает вид корма "Кукуруза", животного "Хомяк"
@@ -20,7 +20,7 @@ public class Hamster extends Animal {
         return weight*getFoodCoeff();
     }
     public static void main(String[] args) {
-        Hamster hamster=new Hamster();
+        Hamster hamster=new Hamster(0.2);
         System.out.println(hamster.getFoodKind());
         System.out.println(hamster.getFoodCoeff());
         System.out.println("Количество еды "+hamster.calculateFoodWeight());
