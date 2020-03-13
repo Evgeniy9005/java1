@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.interfaces;
 
 public class Duck extends Animal {
     public Duck(){
-        super(3d);
+        super(3);
     }
 
     // Возвращает вид корма "Кукуруза", птицы "Утка"

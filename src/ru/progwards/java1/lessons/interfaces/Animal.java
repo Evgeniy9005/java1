@@ -9,10 +9,10 @@ public class Animal implements FoodCompare,CompareWeight {
         CORN
     }
 
-    double weight; // вес тела животного
+    int weight; // вес тела животного
     FoodKind foodKind = FoodKind.HAY;
 
-    public Animal(double weight) {
+    public Animal(int weight) {
         this.weight = weight; //Запоминает вес тела животного
     }
 

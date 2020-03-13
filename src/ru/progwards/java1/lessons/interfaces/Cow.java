@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.interfaces;
 
 public class Cow extends Animal{
     public Cow (){
-        super(270d);
+        super(270);
 
     }
 

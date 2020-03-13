@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.interfaces;
 
 public class Hamster extends Animal {
     public Hamster (){
-        super(2d);
+        super(2);
 
     }
     // Возвращает вид корма "Кукуруза", животного "Хомяк"
