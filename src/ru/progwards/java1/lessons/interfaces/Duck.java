@@ -24,7 +24,6 @@ public class Duck extends Animal {
         System.out.println(duck.getFoodKind());
         System.out.println(duck.getFoodCoeff());
         System.out.println("Количество еды "+duck.calculateFoodWeight());
-        duck.foodKind=FoodKind.CORN;
         System.out.println(duck.getFood1kgPrice());
         System.out.println(duck.getFoodPrice());
     }

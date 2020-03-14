@@ -27,7 +27,7 @@ public class Cow extends Animal{
         System.out.println(cow.getFoodCoeff());
         System.out.println("Количество еды "+cow.calculateFoodWeight());
         System.out.println("Вес коровы "+cow.weight);
-
+        System.out.println(cow.compareFoodPrice(cow));
 
     }
 }

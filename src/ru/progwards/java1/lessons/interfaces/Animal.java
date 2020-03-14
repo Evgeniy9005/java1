@@ -10,7 +10,6 @@ public class Animal implements FoodCompare,CompareWeight {
     }
 
     double weight; // вес тела животного
-    FoodKind foodKind = FoodKind.HAY;
 
     public Animal(double weight) {
         this.weight = weight; //Запоминает вес тела животного
@@ -38,7 +37,7 @@ public class Animal implements FoodCompare,CompareWeight {
 
     //Возвращает информацию о цене 1 кг еды.
     public double getFood1kgPrice() {
-        switch (foodKind) {
+        switch (getFoodKind()) {
             case HAY:
                 return 20;
             case CORN:
@@ -85,7 +84,7 @@ public class Animal implements FoodCompare,CompareWeight {
 
     public static void main(String[] args) {
         Animal animal = new Animal(492);
-        Cow cow = new Cow(300);// Объект карова
+        Cow cow = new Cow(1D);// Объект карова
         Duck duck = new Duck(3);// Объект утка
         Hamster hamster = new Hamster(0.2);// Объект хомяк
 
@@ -95,7 +94,6 @@ public class Animal implements FoodCompare,CompareWeight {
         System.out.println("Вес еды к весу тела животного " + animal.calculateFoodWeight());
         System.out.println("Цене 1 кг еды. Animal " + animal.getFood1kgPrice());
         System.out.println("Цене за количество еды. Animal " + animal.getFoodPrice());
-        duck.foodKind = FoodKind.CORN;
         System.out.println("Цене 1 кг еды. Duck " + duck.getFood1kgPrice());
         System.out.println("Цене за количество еды. Duck " + duck.getFoodPrice());
         System.out.println("Животное и животное " + animal.equals(animal));
@@ -106,5 +104,8 @@ public class Animal implements FoodCompare,CompareWeight {
         System.out.println("Количество еды для коровы " + cow.calculateFoodWeight() + " кг");
         System.out.println(duck.compareWeight(cow));
         System.out.println(duck.getWeight());
+        System.out.println(duck.getFood1kgPrice());
+        System.out.println(cow.compareFoodPrice(duck));
+        System.out.println(duck.compareFoodPrice(cow));
     }
 }

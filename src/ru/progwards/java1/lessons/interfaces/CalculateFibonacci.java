@@ -5,14 +5,15 @@ public class CalculateFibonacci {
     //____________________________________________________
     // Вложенный класс
     public static class CacheInfo{
-        public int n; //- число, для которого рассчитываем Фибоначчи
-        public int fibo; //- результат расчета
+        public int n=0; //- число, для которого рассчитываем Фибоначчи
+        public int fibo=0; //- результат расчета
     }
     //____________________________________________________
     // Возвращает n-ое число Фибоначчи (нумерация начинается с 1, то есть при n = 3
     // должно вернуться число Фибоначчи 2, а при n = 10 число 55).
     public static int fiboNumber(int n) {
         CacheInfo cacheInfo=new CacheInfo();
+        CalculateFibonacci.lastFibo=cacheInfo;
         int i=0;
         int n1=0;
         int fibo=0;
@@ -25,30 +26,30 @@ public class CalculateFibonacci {
         }while (i!=n);
         System.out.println("___________________");
         if (n!=fibo) fiboNumber(fibo);
-        cacheInfo.fibo=fibo;
-        cacheInfo.n=n;
-        lastFibo=cacheInfo;
+        CalculateFibonacci.lastFibo.fibo=fibo;
+        CalculateFibonacci.lastFibo.n=n;
         return fibo;
 
     }
    //____________________________________________________
     //возвращает lastFibo
     public CacheInfo getLastFibo(){
-        return lastFibo;
+        return CalculateFibonacci.lastFibo;
     }
     //____________________________________________________
     //сбрасывает lastFibo в null
     public void clearLastFibo(){
-        lastFibo=null;
+        CalculateFibonacci.lastFibo=null;
     }
     //____________________________________________________
     public static void main(String[] args) {
     CalculateFibonacci cF =new CalculateFibonacci();
     CacheInfo cacheInfo =new CacheInfo();
     System.out.println(fiboNumber(5));
-    System.out.println("n="+cF.getLastFibo().n+" fibo="+cF.getLastFibo().fibo);
+
+    System.out.println("n="+CalculateFibonacci.lastFibo.n+" fibo="+CalculateFibonacci.lastFibo.fibo);
     cF.clearLastFibo();//Сброс LastFibo в null
-    System.out.println("Сброшенная в null n= "+cF.getLastFibo().n+" fibo="+cF.getLastFibo().fibo);
+   //System.out.println("Сброшенная в null n= "+cF.getLastFibo().n+" fibo="+cF.getLastFibo().fibo);
     }
 
 }
