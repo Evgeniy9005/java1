@@ -3,6 +3,7 @@ package ru.progwards.java1.lessons.interfaces;
 public class CalculateFibonacci {
 
     public static CacheInfo lastFibo; // Статическая переменная
+    CacheInfo cacheInfo;
     //____________________________________________________
     // Вложенный класс
     public static class CacheInfo{
@@ -36,16 +37,12 @@ public class CalculateFibonacci {
    //____________________________________________________
     //возвращает lastFibo
     public CacheInfo getLastFibo(){
-        CacheInfo cacheInfo1;
-        cacheInfo1=CalculateFibonacci.lastFibo;
-        return cacheInfo1;
+        return cacheInfo;
     }
     //____________________________________________________
     //сбрасывает lastFibo в null
     public void clearLastFibo(){
-        CacheInfo cacheInfo1;
-        cacheInfo1=null;
-        CalculateFibonacci.lastFibo=cacheInfo1;
+        cacheInfo=null;
     }
 
     //____________________________________________________
