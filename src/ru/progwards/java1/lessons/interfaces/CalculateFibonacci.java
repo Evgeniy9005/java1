@@ -1,6 +1,7 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
+
     public static CacheInfo lastFibo; // Статическая переменная
     //____________________________________________________
     // Вложенный класс
@@ -13,8 +14,8 @@ public class CalculateFibonacci {
     // должно вернуться число Фибоначчи 2, а при n = 10 число 55).
 
     public static int fiboNumber(int n) {
-        CacheInfo cacheInfo=new CacheInfo();
-        CalculateFibonacci.lastFibo=cacheInfo;
+       CacheInfo cacheInfo=new CacheInfo();
+       CalculateFibonacci.lastFibo=cacheInfo;
         int i=0;
         int n1=0;
         int fibo=0;
@@ -29,20 +30,22 @@ public class CalculateFibonacci {
         if (n!=fibo) fiboNumber(fibo);
         CalculateFibonacci.lastFibo.fibo=fibo;
         CalculateFibonacci.lastFibo.n=n;
-
         return fibo;
-
     }
 
    //____________________________________________________
     //возвращает lastFibo
     public CacheInfo getLastFibo(){
-        return CalculateFibonacci.lastFibo;
+        CacheInfo cacheInfo1;
+        cacheInfo1=CalculateFibonacci.lastFibo;
+        return cacheInfo1;
     }
     //____________________________________________________
     //сбрасывает lastFibo в null
     public void clearLastFibo(){
-        CalculateFibonacci.lastFibo=null;
+        CacheInfo cacheInfo1;
+        cacheInfo1=null;
+        CalculateFibonacci.lastFibo=cacheInfo1;
     }
 
     //____________________________________________________
