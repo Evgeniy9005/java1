@@ -11,6 +11,7 @@ public class CalculateFibonacci {
     //____________________________________________________
     // Возвращает n-ое число Фибоначчи (нумерация начинается с 1, то есть при n = 3
     // должно вернуться число Фибоначчи 2, а при n = 10 число 55).
+
     public static int fiboNumber(int n) {
         CacheInfo cacheInfo=new CacheInfo();
         CalculateFibonacci.lastFibo=cacheInfo;
@@ -28,9 +29,11 @@ public class CalculateFibonacci {
         if (n!=fibo) fiboNumber(fibo);
         CalculateFibonacci.lastFibo.fibo=fibo;
         CalculateFibonacci.lastFibo.n=n;
+
         return fibo;
 
     }
+
    //____________________________________________________
     //возвращает lastFibo
     public CacheInfo getLastFibo(){
@@ -41,15 +44,16 @@ public class CalculateFibonacci {
     public void clearLastFibo(){
         CalculateFibonacci.lastFibo=null;
     }
+
     //____________________________________________________
     public static void main(String[] args) {
     CalculateFibonacci cF =new CalculateFibonacci();
     CacheInfo cacheInfo =new CacheInfo();
-    System.out.println(fiboNumber(5));
+    System.out.println(CalculateFibonacci.fiboNumber(5));
 
-    System.out.println("n="+CalculateFibonacci.lastFibo.n+" fibo="+CalculateFibonacci.lastFibo.fibo);
+    System.out.println("n="+cF.getLastFibo().n+" fibo="+cF.getLastFibo().fibo);
     cF.clearLastFibo();//Сброс LastFibo в null
-   //System.out.println("Сброшенная в null n= "+cF.getLastFibo().n+" fibo="+cF.getLastFibo().fibo);
+    System.out.println("Сброшенная в null n= "+CalculateFibonacci.lastFibo.n+" fibo="+CalculateFibonacci.lastFibo.fibo);
     }
 
 }
