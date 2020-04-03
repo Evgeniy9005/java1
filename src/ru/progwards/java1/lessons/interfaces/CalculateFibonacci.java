@@ -37,12 +37,12 @@ public class CalculateFibonacci {
    //____________________________________________________
     //возвращает lastFibo
     public CacheInfo getLastFibo(){
-        return cacheInfo;
+        return lastFibo;
     }
     //____________________________________________________
     //сбрасывает lastFibo в null
     public void clearLastFibo(){
-        cacheInfo=null;
+        lastFibo=null;
     }
 
     //____________________________________________________
