@@ -2,18 +2,18 @@ package ru.progwards.java1.lessons.bigints;
 
 public class ByteInteger extends AbsInteger{
     byte value;
-    ByteInteger(int value){
-        this.value=(byte) value;
+    ByteInteger(byte value){
+        this.value= value;
     }
 
     @Override
     public String toString(){
-        System.out.println(value);
-        return "";
+        return String.valueOf(value);
     }
     public static void main(String[] args) {
-        ByteInteger byteInteger=new ByteInteger(127);
-        System.out.println(byteInteger.add((byte)127,(byte)127));
-        byteInteger.toString();
+        ByteInteger byteInteger=new ByteInteger((byte) 127);
+        System.out.println(byteInteger.add(new ByteInteger((byte)11),new ByteInteger((byte)11)));
+        System.out.println(byteInteger.getClass());
+        System.out.println(byteInteger.toString());
     }
 }

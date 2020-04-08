@@ -8,12 +8,11 @@ public class IntInteger extends AbsInteger {
 
     @Override
     public String toString(){
-        System.out.println(value);
-        return "";
+        return String.valueOf(value);
     }
     public static void main(String[] args) {
         IntInteger intInteger=new IntInteger(10);
-        System.out.println(IntInteger.add( 10,10));
-        intInteger.toString();
+        System.out.println(IntInteger.add( new IntInteger(10),new IntInteger(10)));
+        System.out.println(intInteger.toString());
     }
 }

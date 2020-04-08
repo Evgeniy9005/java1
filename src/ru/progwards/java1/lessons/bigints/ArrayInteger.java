@@ -37,14 +37,18 @@ BigInteger toInt=new BigInteger(str);
     public boolean add(ArrayInteger num){
         int sum;
         for (int i=0; (i<num.t) || (i<this.t);i++ ){
-            if (i>digits.length-1){ // проверка на способность вместить все элементы числа
-                Arrays.fill(digits,(byte)0);// сброс массива в ноль
-                return false;
-            }
+           // if (i==digits.length){ // проверка на способность вместить все элементы числа
+            //    Arrays.fill(digits,(byte)0);// сброс массива в ноль
+            //    return false;
+            //}
             sum=(int)this.digits[i]+ (int)num.digits[i];
             if (sum>9) { // проверка на натуральное число для записи в элемет массива
                 digits[i]=(byte)(sum%10); // вычисляет остаток
-                digits[i+1]=(byte)(digits[i+1]+1);// плюсует целое к следуюшему элементу массива(как при сложении столбиком)
+
+                if (i==digits.length-1){ // проверка на способность вместить все элементы числа
+                    Arrays.fill(digits,(byte)0);// сброс массива в ноль
+                    return false;
+                } else digits[i+1]=(byte)(digits[i+1]+1);// плюсует целое к следуюшему элементу массива(как при сложении столбиком)
             }
             else digits[i]= (byte)sum;
         }
@@ -53,10 +57,10 @@ BigInteger toInt=new BigInteger(str);
 
     public static void main(String[] args) {
         ArrayInteger arrayInteger=new ArrayInteger(5);
-        arrayInteger.fromInt(BigInteger.valueOf(154));
+        arrayInteger.fromInt(BigInteger.valueOf(95444));
         arrayInteger.toInt(); // ввозврашает число в BigInteger
         ArrayInteger arrayInteger1=new ArrayInteger(5);
-        arrayInteger1.fromInt(BigInteger.valueOf(13378));
+        arrayInteger1.fromInt(BigInteger.valueOf(93379));
         arrayInteger.add(arrayInteger1);
         System.out.println("из main "+Arrays.toString(arrayInteger.digits));
     }

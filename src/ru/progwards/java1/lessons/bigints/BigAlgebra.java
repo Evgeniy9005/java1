@@ -5,7 +5,7 @@ import java.math.BigInteger;
 //---------------------------------\\
 public class BigAlgebra {
 //Метод возводит в степень дробное число с помощью алгоритма быстрого возведения в степень Аль-Каши
- public BigDecimal fastPow(BigDecimal num, int pow){
+ public static BigDecimal fastPow(BigDecimal num, int pow){
 BigDecimal num1;
 int pow1=2;
 int b=pow%2;
