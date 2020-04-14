@@ -4,7 +4,6 @@ public class ByteInteger extends AbsInteger  {
     byte value;
     ByteInteger(byte value){
         this.value= value;
-        super.intValue=(int)value;
     }
 
     @Override
