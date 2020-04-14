@@ -10,9 +10,14 @@ public class IntInteger extends AbsInteger {
     public String toString(){
         return String.valueOf(value);
     }
+    @Override
+    public AbsInteger add(AbsInteger num1, AbsInteger num2){
+        IntInteger intInteger=new IntInteger(((IntInteger) num1).value+((IntInteger) num2).value);
+        return intInteger;
+    }
     public static void main(String[] args) {
         IntInteger intInteger=new IntInteger(10);
-        System.out.println(IntInteger.add( new IntInteger(10),new IntInteger(10)));
+        System.out.println(intInteger.add( new IntInteger(10),new IntInteger(10)));
         System.out.println(intInteger.toString());
     }
 }

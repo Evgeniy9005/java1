@@ -35,32 +35,32 @@ BigInteger toInt=new BigInteger(str);
 // Складывает 2 числа, не используя BigInteger, а  используя массив digits, результат помещает в экземпляр
 // ArrayInteger, у которого был вызван метод. При переполнении возврашает false, при этом само число сбрасывет в 0
     public boolean add(ArrayInteger num){
-        int sum;
+        int sum,ar1,ar2;
         for (int i=0; (i<num.t) || (i<this.t);i++ ){
-           // if (i==digits.length){ // проверка на способность вместить все элементы числа
-            //    Arrays.fill(digits,(byte)0);// сброс массива в ноль
-            //    return false;
-            //}
-            sum=(int)this.digits[i]+ (int)num.digits[i];
-            if (sum>9) { // проверка на натуральное число для записи в элемет массива
-                digits[i]=(byte)(sum%10); // вычисляет остаток
+            if (this.digits.length-1>=i)ar1=(int)this.digits[i]; else ar1=0;
+
+            if (num.digits.length-1>=i)ar2=(int)num.digits[i]; else ar2=0;
+
+            sum=ar1+ar2;
+            if ((sum>9) ) { // проверка на натуральное число для записи в элемет массива
+                this.digits[i]=(byte)(sum%10); // вычисляет остаток
 
                 if (i==digits.length-1){ // проверка на способность вместить все элементы числа
                     Arrays.fill(digits,(byte)0);// сброс массива в ноль
                     return false;
                 } else digits[i+1]=(byte)(digits[i+1]+1);// плюсует целое к следуюшему элементу массива(как при сложении столбиком)
             }
-            else digits[i]= (byte)sum;
+            else if(this.digits.length-1>=i) digits[i]= (byte)sum; else {Arrays.fill(digits,(byte)0); return false;}// сброс массива в ноль
         }
         return true;
     }
 
     public static void main(String[] args) {
-        ArrayInteger arrayInteger=new ArrayInteger(5);
-        arrayInteger.fromInt(BigInteger.valueOf(95444));
+        ArrayInteger arrayInteger=new ArrayInteger(7);
+        arrayInteger.fromInt(BigInteger.valueOf(9999999));
         arrayInteger.toInt(); // ввозврашает число в BigInteger
         ArrayInteger arrayInteger1=new ArrayInteger(5);
-        arrayInteger1.fromInt(BigInteger.valueOf(93379));
+        arrayInteger1.fromInt(BigInteger.valueOf(59999));
         arrayInteger.add(arrayInteger1);
         System.out.println("из main "+Arrays.toString(arrayInteger.digits));
     }
