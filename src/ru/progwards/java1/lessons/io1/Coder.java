@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.util.Scanner;
 public class Coder {
 
-
+   // Читает файл inFileName и перекодирует его посимвольно в соответствии с заданным шифром,
+   // результат записывает в outFileName. Шифр задается маcсивом char[] code, где каждому символу symbol оригинального
+   // файла соответствует символ code[(int)symbol] выходного файла. В случае ошибок, в файл с именем logName выводит
+   // название ошибки через метод класса Exception - getMessage()
     public  static void codeFile(String inFileName, String outFileName, char[] code, String logName){
         String str ="";
         String outStr="";
@@ -36,9 +39,6 @@ public class Coder {
         for(int i=0;i<str.length();i++){
             outStr=outStr+code[(int)str.charAt(i)];
         }
-       // System.out.println("Вывод "+outStr);
-      //  System.out.println(code[(int)' ']);
-
 //создает файл и записывает в него полученную выходную строку
        try {
            FileWriter fileWriter = new FileWriter(outFileName, false); //Если false то пишет строку заново, если true продолжает писат файл
@@ -54,7 +54,6 @@ public class Coder {
                err.close();
            }
        }
-
     } catch (IOException e) {// Исключение записи в файла ошибки logName
         System.out.println("Ошибка записи исключения в файл " + e.getMessage());
         }
@@ -74,9 +73,6 @@ public class Coder {
         if(t==100) {t=0;
         System.out.println();}
     }
-
         codeFile("inFileName.text","outFileName.text",code,"logName.text");
-
-
     }
 }
