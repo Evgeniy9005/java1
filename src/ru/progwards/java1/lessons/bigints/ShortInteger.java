@@ -11,7 +11,7 @@ public class ShortInteger extends AbsInteger{
         return String.valueOf(value);
     }
     @Override
-    public AbsInteger add(AbsInteger num1, AbsInteger num2){
+    public  AbsInteger add(AbsInteger num1, AbsInteger num2){
         ShortInteger shortInteger=new ShortInteger((short) ((int)((ShortInteger) num1).value+(int)((ShortInteger) num2).value));
         return shortInteger;
     }

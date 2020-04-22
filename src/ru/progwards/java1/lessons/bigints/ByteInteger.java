@@ -11,7 +11,7 @@ public class ByteInteger extends AbsInteger  {
         return String.valueOf(value);
     }
     @Override
-    public AbsInteger add(AbsInteger num1, AbsInteger num2){
+    public  AbsInteger add(AbsInteger num1, AbsInteger num2){
     ByteInteger byteInteger=new ByteInteger((byte)((int)((ByteInteger) num1).value+(int)((ByteInteger) num2).value));
         return byteInteger;
     }
