@@ -10,23 +10,21 @@ public class Coder {
    // файла соответствует символ code[(int)symbol] выходного файла. В случае ошибок, в файл с именем logName выводит
    // название ошибки через метод класса Exception - getMessage()
     public  static void codeFile(String inFileName, String outFileName, char[] code, String logName){
-        String str ="";
-        String outStr="";
 
         try {
             //создает файл и записывает в него полученное исключение
             FileWriter err = new FileWriter(logName, false); //Если false то пишет строку заново, если true продолжает писат файл
-
-//чтение файла и запись в строку
+//чтение из файла и запись в файл кодированого текста
         try{
             FileReader reader=new FileReader (inFileName);
+            FileWriter fileWriter = new FileWriter(outFileName, false); //Если false то пишет строку заново, если true продолжает писат файл
             try{
-                Scanner scanner = new Scanner(reader);
-                while (scanner.hasNextLine()) {
-                           str=str+scanner.nextLine();
+                while (reader.read()!=-1) {
+                    fileWriter.write(code[reader.read()]);
                 }
             }finally {
                 reader.close();
+                fileWriter.close();
             }
         }catch (Exception e){
             try {
@@ -35,34 +33,14 @@ public class Coder {
                 err.close();
             }
         }
-//кодирование символов и запись в строку для записи в файл
-        for(int i=0;i<str.length();i++){
-            outStr=outStr+code[(int)str.charAt(i)];
-        }
-//создает файл и записывает в него полученную выходную строку
-       try {
-           FileWriter fileWriter = new FileWriter(outFileName, false); //Если false то пишет строку заново, если true продолжает писат файл
-           try {
-               fileWriter.write(outStr+"\n");
-           } finally {
-               fileWriter.close();
-           }
-       }catch (Exception e){
-           try {
-               err.write(e.getMessage());
-           } finally {
-               err.close();
-           }
-       }
+
     } catch (IOException e) {// Исключение записи в файла ошибки logName
         System.out.println("Ошибка записи исключения в файл " + e.getMessage());
         }
     }
 
-
     public static void main(String[] args) {
         char[] code =new char[65536];
-        code[100]=65535;
         for(int i=161;i<65536;i++){
             code[i-161]=(char) i;
         }
