@@ -10,7 +10,7 @@ public class Coder {
    // файла соответствует символ code[(int)symbol] выходного файла. В случае ошибок, в файл с именем logName выводит
    // название ошибки через метод класса Exception - getMessage()
     public  static void codeFile(String inFileName, String outFileName, char[] code, String logName){
-
+        int writeInt=0;
         try {
             //создает файл и записывает в него полученное исключение
             FileWriter err = new FileWriter(logName, false); //Если false то пишет строку заново, если true продолжает писат файл
@@ -19,9 +19,10 @@ public class Coder {
             FileReader reader=new FileReader (inFileName);
             FileWriter fileWriter = new FileWriter(outFileName, false); //Если false то пишет строку заново, если true продолжает писат файл
             try{
-                while (reader.read()!=-1) {
-                    fileWriter.write(code[reader.read()]);
-                }
+                do{
+                   writeInt=reader.read();
+                    if (writeInt!=-1)fileWriter.write(code[writeInt]);
+                }while (writeInt!=-1);
             }finally {
                 reader.close();
                 fileWriter.close();
